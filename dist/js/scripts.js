@@ -1,4 +1,4 @@
-// Bistro Bell - Interactive JavaScript
+// Bell Bistro - Interactive JavaScript
 
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize all interactive features
@@ -190,7 +190,7 @@ window.addEventListener('load', function() {
     preloader.className = 'preloader';
     preloader.innerHTML = `
         <div class="preloader-content">
-            <img src="images/logo 2.0.png" alt="Bistro Bell" class="preloader-logo">
+            <img src="images/logo 2.0.png" alt="Bell Bistro" class="preloader-logo">
             <div class="preloader-spinner"></div>
         </div>
     `;
@@ -300,7 +300,7 @@ document.addEventListener('DOMContentLoaded', initLazyLoading);
 
 // Console welcome message
 console.log(`
-🍽️ Welcome to Bistro Bell! 
+🍽️ Welcome to Bell Bistro! 
 🎨 Website crafted with care and attention to detail
 � Call us to book: 01603 362600
 ⭐ Thank you for visiting our digital home
