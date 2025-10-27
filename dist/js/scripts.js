@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', function() {
     initSmoothScrolling();
 
     initFormValidation();
-    initAnimations();
 });
 
 // Navbar scroll effect
@@ -160,105 +159,8 @@ function showSuccessMessage(message) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// Initialize animations on scroll
-function initAnimations() {
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-    
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('fade-in');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-    
-    // Observe elements for animation
-    document.querySelectorAll('.feature-card, .gallery-item, .menu-section').forEach(el => {
-        observer.observe(el);
-    });
-}
 
 
-
-// Preloader functionality
-window.addEventListener('load', function() {
-    const preloader = document.createElement('div');
-    preloader.className = 'preloader';
-    preloader.innerHTML = `
-        <div class="preloader-content">
-            <img src="images/logo 2.0.png" alt="Bell Bistro" class="preloader-logo">
-            <div class="preloader-spinner"></div>
-        </div>
-    `;
-    
-    // Add preloader styles
-    const style = document.createElement('style');
-    style.textContent = `
-        .preloader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgb(42, 59, 71);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 9999;
-            opacity: 1;
-            transition: opacity 0.5s ease;
-        }
-        
-        .preloader-content {
-            text-align: center;
-        }
-        
-        .preloader-logo {
-            height: 60px;
-            margin-bottom: 20px;
-            animation: pulse 2s infinite;
-            background: transparent !important;
-            border: none;
-            box-shadow: none;
-        }
-        
-        .preloader-spinner {
-            width: 40px;
-            height: 40px;
-            border: 3px solid rgba(212, 175, 55, 0.3);
-            border-top: 3px solid #d4af37;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin: 0 auto;
-        }
-        
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.7; }
-        }
-        
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-    `;
-    
-    document.head.appendChild(style);
-    document.body.appendChild(preloader);
-    
-    // Hide preloader after a short delay
-    setTimeout(() => {
-        preloader.style.opacity = '0';
-        setTimeout(() => {
-            preloader.remove();
-            style.remove();
-        }, 500);
-    }, 1000);
-});
 
 // Mobile menu enhancements
 document.addEventListener('DOMContentLoaded', function() {
