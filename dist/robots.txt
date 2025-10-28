@@ -1,0 +1,21 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://bellbistro.co.uk/sitemap.xml
+
+# Preferred crawl delay
+Crawl-delay: 1
+
+# Disallow specific paths if needed
+# Disallow: /admin/
+# Disallow: /private/
+
+# Allow specific important pages
+Allow: /index.html
+Allow: /about.html
+Allow: /menu.html
+Allow: /contact.html
+Allow: /images/
+Allow: /css/
+Allow: /js/
