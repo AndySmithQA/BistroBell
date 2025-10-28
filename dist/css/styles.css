@@ -855,18 +855,20 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
-/* Additional sparkle effect */
-.grand-opening-announcement::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
-    animation: sparkle 3s infinite;
-    pointer-events: none;
-    z-index: 2;
+/* Additional sparkle effect - Disabled on mobile to prevent visual glitches */
+@media (min-width: 768px) {
+    .grand-opening-announcement::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+        animation: sparkle 3s infinite;
+        pointer-events: none;
+        z-index: 2;
+    }
 }
 
 @keyframes sparkle {
@@ -875,5 +877,30 @@ h1, h2, h3, h4, h5, h6 {
     }
     100% {
         transform: translateX(100%) translateY(100%) rotate(360deg);
+    }
+}
+
+/* Mobile-specific fixes to prevent shadow glitches on iPhone */
+@media (max-width: 767px) {
+    .grand-opening-announcement {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        -webkit-perspective: 1000px;
+        perspective: 1000px;
+    }
+    
+    .fireworks-container {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+    
+    .firework {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        will-change: transform, opacity;
     }
 }
