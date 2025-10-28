@@ -891,16 +891,19 @@ h1, h2, h3, h4, h5, h6 {
         perspective: 1000px;
     }
     
+    /* Disable fireworks animations on mobile to prevent box-shadow glitches */
     .fireworks-container {
-        -webkit-transform: translateZ(0);
-        transform: translateZ(0);
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
+        display: none !important;
     }
     
     .firework {
-        -webkit-transform: translateZ(0);
-        transform: translateZ(0);
-        will-change: transform, opacity;
+        display: none;
+    }
+    
+    /* Clean announcement box with no effects on mobile */
+    .grand-opening-announcement {
+        box-shadow: none !important;
+        border: 2px solid #e8b06d !important;
+        background-color: #000 !important;
     }
 }
