@@ -298,14 +298,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .gallery-item img {
-    transition: transform 0.3s ease;
+    width: 100%;
+    height: 300px; /* Set a fixed height for uniformity */
+    object-fit: cover;
 }
-
-.gallery-item:hover img {
-    transform: scale(1.1);
-}
-
-
 
 /* Image Grid */
 .image-grid img {
@@ -428,6 +424,487 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Menu Page Styles */
+.menu-hero {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    padding: 8rem 0 4rem;
+    padding-top: 10rem; /* Extra padding for navbar clearance */
+    position: relative;
+    overflow: hidden;
+}
+
+.menu-image {
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.menu-image:hover {
+    transform: scale(1.02);
+}
+
+.menu-section {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.menu-item {
+    border-bottom: 1px solid rgba(44, 85, 48, 0.1);
+    padding: 1.5rem 0;
+}
+
+.menu-item:last-child {
+    border-bottom: none;
+}
+
+.menu-item-name {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+.menu-item-price {
+    color: var(--accent-color);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.menu-item-description {
+    color: var(--text-light);
+    font-style: italic;
+    margin-top: 0.5rem;
+}
+
+/* Contact Form */
+.contact-form {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.form-control {
+    border: 2px solid #e9ecef;
+    border-radius: 10px;
+    padding: 1rem;
+    transition: border-color 0.3s ease;
+    font-size: 1rem;
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(44, 85, 48, 0.25);
+}
+
+.form-control.is-invalid {
+    border-color: #dc3545;
+}
+
+.form-control.is-invalid:focus {
+    border-color: #dc3545;
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+}
+
+.invalid-feedback {
+    display: block;
+    width: 100%;
+    margin-top: 0.25rem;
+    font-size: 0.875rem;
+    color: #dc3545;
+}
+
+.form-label {
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.form-check-input:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.form-check-input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(44, 85, 48, 0.25);
+}
+
+.btn-accent {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+.btn-accent:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--white);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero {
+        padding-top: 100px; /* More padding on mobile for larger navbar */
+    }
+    
+    .menu-hero {
+        padding-top: 120px; /* More padding on mobile */
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .blotch {
+        width: 150px !important;
+        height: 150px !important;
+    }
+    
+    .footer-blotch {
+        width: 100px !important;
+        height: 100px !important;
+    }
+    
+    .feature-card {
+        margin-bottom: 2rem;
+    }
+    
+    .navbar-brand .logo-text {
+        font-size: 1.2rem;
+    }
+    
+    /* Ensure navbar doesn't overlap content */
+    .navbar {
+        z-index: 1050;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero {
+        text-align: center;
+        padding-top: 120px; /* Even more padding on very small screens */
+    }
+    
+    .menu-hero {
+        padding-top: 140px; /* Extra padding for small screens */
+    }
+    
+    .hero-buttons .btn {
+        display: block;
+        width: 100%;
+        margin: 0.5rem 0;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    /* Mobile navbar adjustments */
+    .navbar {
+        padding: 0.75rem 0;
+    }
+    
+    .navbar-toggler {
+        border: none;
+        font-size: 1.5rem;
+    }
+}
+
+
+
+.slide-in-left {
+    animation: slideInLeft 1s ease-out;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.slide-in-right {
+    animation: slideInRight 1s ease-out;
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Map Section */
+.map-container {
+    background: var(--white);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.map-wrapper {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.map-wrapper iframe {
+    transition: filter 0.3s ease;
+}
+
+.map-wrapper:hover iframe {
+    filter: brightness(1.05);
+}
+
+/* Utility Classes */
+.text-primary-custom {
+    color: var(--primary-color) !important;
+}
+
+.bg-primary-custom {
+    background-color: var(--primary-color) !important;
+}
+
+.text-accent {
+    color: var(--accent-color) !important;
+}
+
+.bg-accent {
+    background-color: var(--accent-color) !important;
+}
+
+/* Grand Opening Fireworks Animation */
+.grand-opening-announcement {
+    position: relative;
+    overflow: hidden;
+}
+
+.fireworks-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.firework {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    animation: firework 2.5s infinite;
+}
+
+.firework::before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 20px;
+    background: linear-gradient(to top, currentColor, transparent);
+    left: 50%;
+    bottom: 100%;
+    transform: translateX(-50%);
+    opacity: 0;
+    animation: rocket-trail 2.5s infinite;
+}
+
+.firework-1 {
+    top: 20%;
+    left: 20%;
+    background: #ff6b6b;
+    animation-delay: 0s;
+}
+
+.firework-2 {
+    top: 30%;
+    right: 20%;
+    background: #4ecdc4;
+    animation-delay: 0.5s;
+}
+
+.firework-3 {
+    top: 60%;
+    left: 30%;
+    background: #ffe66d;
+    animation-delay: 1s;
+}
+
+.firework-4 {
+    top: 40%;
+    right: 30%;
+    background: #ff8b94;
+    animation-delay: 1.5s;
+}
+
+.firework-5 {
+    top: 15%;
+    left: 50%;
+    background: #a8e6cf;
+    animation-delay: 0.3s;
+}
+
+.firework-6 {
+    top: 50%;
+    left: 10%;
+    background: #ffd93d;
+    animation-delay: 0.8s;
+}
+
+.firework-7 {
+    top: 25%;
+    right: 10%;
+    background: #ff9ff3;
+    animation-delay: 1.2s;
+}
+
+.firework-8 {
+    top: 65%;
+    right: 15%;
+    background: #74b9ff;
+    animation-delay: 2s;
+}
+
+@keyframes rocket-trail {
+    0% {
+        opacity: 0;
+        height: 0px;
+    }
+    15% {
+        opacity: 1;
+        height: 20px;
+    }
+    30% {
+        opacity: 0.8;
+        height: 15px;
+    }
+    50% {
+        opacity: 0;
+        height: 0px;
+    }
+    100% {
+        opacity: 0;
+        height: 0px;
+    }
+}
+
+@keyframes firework {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+        box-shadow: 0 0 0 0 currentColor,
+                    0 0 0 0 currentColor,
+                    0 0 0 0 currentColor,
+                    0 0 0 0 currentColor,
+                    0 0 0 0 currentColor,
+                    0 0 0 0 currentColor;
+    }
+    20% {
+        transform: scale(0.5);
+        opacity: 1;
+    }
+    30% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.5);
+        opacity: 0.8;
+        box-shadow: 0 -30px 0 -6px currentColor,
+                    21px -21px 0 -6px currentColor,
+                    30px 0 0 -6px currentColor,
+                    21px 21px 0 -6px currentColor,
+                    0 30px 0 -6px currentColor,
+                    -21px 21px 0 -6px currentColor,
+                    -30px 0 0 -6px currentColor,
+                    -21px -21px 0 -6px currentColor;
+    }
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+        box-shadow: 0 -45px 0 -8px currentColor,
+                    32px -32px 0 -8px currentColor,
+                    45px 0 0 -8px currentColor,
+                    32px 32px 0 -8px currentColor,
+                    0 45px 0 -8px currentColor,
+                    -32px 32px 0 -8px currentColor,
+                    -45px 0 0 -8px currentColor,
+                    -32px -32px 0 -8px currentColor;
+    }
+}
+
+/* Additional sparkle effect - Disabled on mobile to prevent visual glitches */
+@media (min-width: 768px) {
+    .grand-opening-announcement::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+        animation: sparkle 3s infinite;
+        pointer-events: none;
+        z-index: 2;
+    }
+}
+
+@keyframes sparkle {
+    0% {
+        transform: translateX(-100%) translateY(-100%) rotate(0deg);
+    }
+    100% {
+        transform: translateX(100%) translateY(100%) rotate(360deg);
+    }
+}
+
+/* Mobile-specific fixes to prevent shadow glitches on iPhone */
+@media (max-width: 767px) {
+    .grand-opening-announcement {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        -webkit-perspective: 1000px;
+        perspective: 1000px;
+    }
+    
+    /* Disable fireworks animations on mobile to prevent box-shadow glitches */
+    .fireworks-container {
+        display: none !important;
+    }
+    
+    .firework {
+        display: none;
+    }
+    
+    /* Clean announcement box with no effects on mobile */
+    .grand-opening-announcement {
+        box-shadow: none !important;
+        border: 2px solid #e8b06d !important;
+        background-color: #000 !important;
+    }
+}
+
+/* Christmas Menu Page Styles */
 .menu-hero {
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
     padding: 8rem 0 4rem;
